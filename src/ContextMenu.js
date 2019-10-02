@@ -228,6 +228,9 @@ export default class ContextMenu extends AbstractMenu {
     render() {
         const { children, className, style } = this.props;
         const { isVisible } = this.state;
+
+        if (!isVisible) return null;
+
         const inlineStyle = assign(
             {},
             style,
